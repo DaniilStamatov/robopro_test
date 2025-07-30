@@ -1,0 +1,99 @@
+res/
+# Базовые исключения для Linux
+*~
+.*.swp
+.*.swo
+*.o
+*.ko
+*.obj
+*.so
+*.so.*
+*.a
+*.la
+*.lo
+*.out
+*.pid
+*.core
+*.core.*
+
+# Служебные файлы
+.DS_Store
+*.orig
+*.rej
+*#
+.#*
+.*.kdev4
+*.kdev4
+.idea/
+.vscode/
+*.user
+*.suo
+*.ncb
+*.sdf
+*.opensdf
+
+# Сборка CMake
+build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+*.cmake
+*.ninja
+.ninja_deps
+.ninja_log
+
+# Qt специфика
+moc_*
+qrc_*
+ui_*
+*.moc
+*.qrc.d
+*.qm
+*.qmlc
+*.jsc
+
+# Автогенерация
+*.autosave
+
+# Бинарники и исполняемые файлы
+/bin/
+/lib/
+Robopro  # имя вашего исполняемого файла
+
+# Резервные копии
+*.bak
+*.tmp
+*.backup
+
+# Логи и тестовые данные
+*.log
+*.trs
+*.test
+
+# Пакеты
+*.deb
+*.rpm
+*.tar.gz
+*.zip
+
+# Промежуточные файлы документации
+*.dox
+*.aux
+*.toc
+*.log
+*.bbl
+*.blg
+*.idx
+*.ilg
+*.ind
+
+# Исключения для CLion
+.idea
+cmake-build-*/
+
+# Исключения для Qt Creator
+*.pro.user
+*.pro.user.*
+*.clang*
