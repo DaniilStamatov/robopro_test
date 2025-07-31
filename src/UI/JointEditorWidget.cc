@@ -6,6 +6,7 @@ JointEditorWidget::JointEditorWidget(QWidget* parent) : QWidget(parent) {
   SetupUI();
   SetupConnects();
   std::vector<Joint> defaultJoints = {{15.0, 0.0, 0.213, M_PI / 2}, {-50.0, -0.8, 0.193, 0.0},    {-60.0, -0.59, -0.16, 0.0},
+
                                       {95.0, 0.0, 0.25, M_PI / 2},  {50.0, 0.0, 0.28, -M_PI / 2}, {0.0, 0.0, 0.25, 0.0}};
 
   for (const auto& j : defaultJoints) {
@@ -33,7 +34,7 @@ void JointEditorWidget::SetupUI() {
   table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
   table->verticalHeader()->setDefaultSectionSize(30);
   table->setStyleSheet("QTableWidget { font-size: 14px; }");
-  
+
   addButton = new QPushButton("+", this);
   removeButton = new QPushButton("-", this);
   computeButton = new QPushButton("Вычислить", this);

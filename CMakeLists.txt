@@ -13,7 +13,6 @@ set(CMAKE_AUTOUIC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
 
-# Пути к исходникам
 set(MAIN_SOURCES
     src/RobotMath.cc
     src/UI/JointEditorWidget.cc
@@ -37,7 +36,6 @@ target_include_directories(Robopro PRIVATE
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-# GoogleTest
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -48,10 +46,6 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
-
-# Основной исполняемый файл
-
-
 
 add_executable(robotmath_test
     tests/robot_math_test.cc
@@ -72,11 +66,9 @@ target_include_directories(robotmath_test PRIVATE
     ${GLM_INCLUDE_DIRS}
 )
 
-# Регистрируем тесты из robotmath_test для CTest
 include(GoogleTest)
 gtest_discover_tests(robotmath_test)
 
-# Опционально можно задать отдельный вывод бинарников для тестов:
 set_target_properties(robotmath_test PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/tests
 )

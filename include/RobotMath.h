@@ -8,7 +8,7 @@ struct Joint {
   double theta;  // Угол поворота в градусах
   double a;      // Длина звена
   double d;      // Смещение звена
-  double alpha;
+  double alpha;  // Угол между z-осями
 };
 
 class RobotMath {
