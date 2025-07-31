@@ -17,3 +17,12 @@ test:
 
 clean:
 	@rm -rf ${BUILD_DIR}
+
+valgrind:
+	@rm -rf ${BUILD_DIR}
+	@mkdir -p ${BUILD_DIR}
+	@cmake -S . -B ${BUILD_DIR}
+	@cmake --build ${BUILD_DIR} --target robotmath_test -j$(shell nproc)
+	valgrind --leak-check=full --track-origins=yes \
+	         --error-exitcode=1 \
+	         ${BUILD_DIR}/bin/tests/robotmath_test
